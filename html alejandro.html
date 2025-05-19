@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clasificacion Formula</title>
+
+  <!-- Importación de la biblioteca oficial de Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <!-- Tu código JavaScript principal -->
+  <script defer src="app.js"></script>
+  <style>
+/* Estilo de los botones */
+button {
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #4cae4c;
+}
+/* Estilo del listado de tareas */
+#listadoTareas {
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+/* Estilo de cada tarea */
+#listadoTareas div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+#listadoTareas div:last-child {
+    border-bottom: none;
+}
+/* Estilo de los párrafos */
+#listadoTareas p {
+    margin: 0;
+    flex-grow: 1;
+}
+</style>
+</head>
+<body>
+  <h1>Clasificacion Formula</h1>
+  <form id="formularioTarea">
+  <input type="text" name="nombre" placeholder="nombre" required>
+  <input type="text" name="equipo" placeholder="equipo">
+  <input type="date" name="año">
+  <input type="time" name="hora">
+  <input type="number" name="puesto" placeholder="puesto">
+
+  <label>
+    Completada
+    <input type="checkbox" name="completada">
+  </label>
+
+  <button type="submit" id="botonGuardar">Guardar tarea</button>
+  <button type="button" id="botonCancelar" style="display: none;">Cancelar edición</button>
+</form>
+
+  <div id="listadoTareas"></div>
+</body>
+</html>
